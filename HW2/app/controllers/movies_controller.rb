@@ -7,10 +7,16 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @highlight = ""
     if params[:sort] == 'title'
       @movies = Movie.order("title")
+      @highlight = "title"
+    elsif params[:sort] == "release_date"
+      @highlight = "release_date"
+      @movies = Movie.order("release_date")
     else
       @movies = Movie.all
+      @highlight = ""
     end
   end
 
@@ -43,3 +49,4 @@ class MoviesController < ApplicationController
   end
 
 end
+
