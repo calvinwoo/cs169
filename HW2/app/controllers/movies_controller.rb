@@ -7,14 +7,14 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @all_ratings = ['G','PG','PG-13','R']
+    @all_ratings = ['G','PG','PG-13','R', 'NC-17']
     @highlight = ""
     redirect_session = false
     if not params[:ratings] and session[:ratings]
         @ratings = session[:ratings]
         redirect_session = true
     elsif not params[:ratings]
-        @ratings = ['G','PG','PG-13','R']
+        @ratings = ['G','PG','PG-13','R', 'NC-17']
     else
         @ratings = params[:ratings].keys
     end
