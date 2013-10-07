@@ -9,23 +9,39 @@ class MoviesController < ApplicationController
   def index
     @all_ratings = ['G','PG','PG-13','R']
     @highlight = ""
-    if not params[:ratings]
+    redirect_session = false
+    if not params[:ratings] and session[:ratings]
+        @ratings = session[:ratings]
+        redirect_session = true
+    elsif not params[:ratings]
         @ratings = ['G','PG','PG-13','R']
     else
         @ratings = params[:ratings].keys
     end
+    session[:ratings] = @ratings
     
-    if params[:sort] == 'title'
-      @movies = Movie.where(rating: @ratings).order("title")
-      @highlight = "title"
-    elsif params[:sort] == "release_date"
-      @highlight = "release_date"
-      @movies = Movie.where(rating: @ratings).order("release_date")
+    if params[:sort]
+      @highlight = params[:sort]
+      @movies = Movie.where(rating: @ratings).order(params[:sort])
+      session[:sort] = params[:sort]
+    elsif not params[:sort] and session[:sort]
+      @movies = Movie.where(rating: @ratings).order(session[:sort])
+      @highlight = session[:sort]
+      params[:sort] = session[:sort]
+      redirect_session = true
     else
       @movies = Movie.where(rating: @ratings)
       @highlight = ""
     end
     
+    if redirect_session
+        flash.keep
+        map = {}
+        @ratings.each do |rating|
+          map[rating] = 1
+        end
+        redirect_to movies_path(:sort => session[:sort], :ratings => map)
+    end
   end
 
   def new
