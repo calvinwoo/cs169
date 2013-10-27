@@ -1,0 +1,92 @@
+---
+Cucumber Features:
+  :original_result:
+    /home/saasbook/Documents/hw2/cs169/HW4/app/controllers/application_controller.rb:
+    - 1
+    - 1
+    - 
+    /home/saasbook/Documents/hw2/cs169/HW4/app/helpers/application_helper.rb:
+    - 1
+    - 
+    /home/saasbook/Documents/hw2/cs169/HW4/app/helpers/movies_helper.rb:
+    - 1
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    /home/saasbook/Documents/hw2/cs169/HW4/app/controllers/movies_controller.rb:
+    - 1
+    - 
+    - 1
+    - 1
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 1
+    - 1
+    - 
+    - 
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    /home/saasbook/Documents/hw2/cs169/HW4/app/models/movie.rb:
+    - 1
+    - 1
+    - 0
+    - 
+    - 
+  :created_at: 2013-10-27 15:52:46.703851195 -07:00
