@@ -1,0 +1,8 @@
+-# in app/views/movies/show.html.haml
+
+%h2 Movies from the same director as #{@movie.title}
+
+%ul
+  - @similar_movies.each do |similar_movie|
+    %li 
+      = link_to "#{similar_movie.title}", movie_path(similar_movie)

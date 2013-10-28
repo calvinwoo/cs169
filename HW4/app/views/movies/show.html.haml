@@ -4,8 +4,12 @@
 
 %ul#details
   %li
-    Director:
-    = @movie.director
+    - if @movie.director
+      Director:
+      = @movie.director
+    - else
+      = @movie.title 
+      has no director info
   %li
     Rating:
     = @movie.rating
@@ -18,5 +22,10 @@
 %p#description= @movie.description
 
 = link_to 'Edit', edit_movie_path(@movie)
+<br>
+-# if @movie.director and @movie.director != ""
+= link_to 'Find Movies With Same Director', similar_director_path(@movie)
+-# else
+-#= link_to 'Find Movies With Same Director', movies_path(:no_director => @movie.title)
 = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to movie list', movies_path
